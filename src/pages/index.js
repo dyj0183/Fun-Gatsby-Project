@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Hero from "../components/Hero"
 import * as styles from "../components/index.module.css"
 
 const links = [
@@ -73,6 +74,7 @@ const IndexPage = () => (
   <Layout>
     <h1>
       Welcome to <b>Gatsby!</b>
+      <Hero></Hero>
     </h1>
   </Layout>
 )
