@@ -1,38 +1,74 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import styled, { keyframes } from "styled-components"
 
 const Hero = () => {
-  const peopleData = useStaticQuery(graphql`
-    query PeopleQuery {
-      allPeopleJson {
+  const hobbyData = useStaticQuery(graphql`
+    query HobbyQuery {
+      allHobbyJson {
         edges {
           node {
-            id
             name
-            phone
           }
         }
       }
     }
   `)
 
-  const people = peopleData.allPeopleJson.edges
-
-  console.log("people", people)
+  const hobbies = hobbyData.allHobbyJson.edges
 
   return (
     <>
-      <h1>This is the Hero section</h1>
-      <h2>All People Names</h2>
-      <ul>
-        {people.map(({ node }) => (
-          <li>
-            <strong>{node.name}</strong>
-          </li>
+      <CenteredContainer>
+        <h1>Hi guys, This is Yu-Chun Tung</h1>
+        <h2>I'm passionate about:</h2>
+      </CenteredContainer>
+      <RotatingTextContainer>
+        {hobbies.map(({ node }, index) => (
+          <RotatingText key={index} style={{ animationDelay: `${index * 3}s` }}>
+            {node.name.toUpperCase()}!
+          </RotatingText>
         ))}
-      </ul>
+      </RotatingTextContainer>
     </>
   )
 }
 
 export default Hero
+
+const fadeInOut = keyframes`
+  0%, 25%, 100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  5%, 20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
+
+const RotatingTextContainer = styled.div`
+  position: relative;
+  height: 30px; /* Adjust to the height of a single line of text */
+  overflow: hidden; /* Hide the overflowing text */
+  margin-top: 20px;
+`
+
+const RotatingText = styled.div`
+  position: absolute;
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff4500;
+  text-align: center;
+  animation: ${fadeInOut} 9s ease-in-out infinite;
+`
+const CenteredContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+
+  text-align: center; /* Center text alignment */
+  padding: 20px;
+`

@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <HeadWrapper>
       <HeadContent>
-        I'd like to become a
+        I WANT to become a
         <span style={{ fontWeight: "bold", marginLeft: "8px" }}> MVer</span>!
       </HeadContent>
     </HeadWrapper>
