@@ -36,6 +36,16 @@ const Hero = () => {
 
 export default Hero
 
+// Animation to fade in the RotatingTextContainer after 5 seconds
+const fadeInAfterDelay = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+
 const fadeInOut = keyframes`
   0%, 25%, 100% {
     opacity: 0;
@@ -52,6 +62,9 @@ const RotatingTextContainer = styled.div`
   height: 30px; /* Adjust to the height of a single line of text */
   overflow: hidden; /* Hide the overflowing text */
   margin-top: 10px;
+  opacity: 0; /* Initially hidden */
+  animation: ${fadeInAfterDelay} 1s ease-in-out forwards;
+  animation-delay: 5s; /* Delay the fade-in by 4 seconds */
 `
 
 const RotatingText = styled.div`
@@ -63,12 +76,12 @@ const RotatingText = styled.div`
   text-align: center;
   animation: ${fadeInOut} 9s ease-in-out infinite;
 `
+
 const CenteredContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
-
   text-align: center; /* Center text alignment */
   padding: 20px;
 `
