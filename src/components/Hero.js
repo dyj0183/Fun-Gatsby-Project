@@ -51,7 +51,7 @@ const RotatingTextContainer = styled.div`
   position: relative;
   height: 30px; /* Adjust to the height of a single line of text */
   overflow: hidden; /* Hide the overflowing text */
-  margin-top: 20px;
+  margin-top: 10px;
 `
 
 const RotatingText = styled.div`

@@ -15,15 +15,19 @@ const Header = () => {
 export default Header
 
 const HeadWrapper = styled.div`
-  background: #add8e6;
+  background: linear-gradient(135deg, #add8e6, #87cefa);
   height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 4px solid #4682b4; /* Add a border for more definition */
 `
+
 const HeadContent = styled.div`
   display: flex;
   align-items: center;
   font-size: 50px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow effect */
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Enhanced shadow effect */
+  font-family: "Arial", sans-serif; /* Professional font */
 `
