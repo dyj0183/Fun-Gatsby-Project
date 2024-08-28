@@ -21,7 +21,7 @@ const Hero = () => {
     <>
       <CenteredContainer>
         <h1>Hi guys, This is Yu-Chun Tung</h1>
-        <h1>I'm passionate about</h1>
+        <h1>I'm passionate about...</h1>
       </CenteredContainer>
       <RotatingTextContainer>
         {hobbies.map(({ node }, index) => (
